@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Learning Vue</title>
+</head>
+<body>
+    <h1>Hellow Vue </h1>
+
+    <div id="app">
+        <h3>{{ title }} - {{ author }} - {{ age }}</h3>
+        <!-- without methods functions -->
+       <div class="container">
+            <button v-on:click="age++">Increase Age</button>
+            <button v-on:click="age--">Decrease Age</button>
+       </div>
+        <!-- with methods functions -->
+        <div class="container">
+            <button v-on:click="increaseAge">Increase Age</button>
+            <button v-on:click="decreaseAge">Decrease Age</button>
+        </div>
+        <!-- short form -->
+        <div @click="changeTitle1">something else1</div>
+         <!-- passing data to function -->
+         <div @click="changeTitle2('wewew')">something else2</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
