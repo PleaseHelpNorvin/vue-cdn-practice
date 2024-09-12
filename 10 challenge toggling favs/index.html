@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Learning Vue</title>
+
+    <!-- can be use for status -->
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto; 
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav{
+            background: #ff9ed2;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Hellow Vue </h1>
+
+    <div id="app">
+        <!-- attribute binding -->
+        <a v-bind:href="url">attribute binding example</a> <br>
+        <!-- other example of attribute binding (short hand) -->
+        <a :href="url">attribute binding example</a>
+
+        <p>asdadasd</p>
+
+        <div v-if="showBooks">
+            <ul>
+                
+                <li v-for="book in books" :class="{ fav: book.isFav }" @click.prevent="toggleFav(book)">
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{book.title}}</h3>
+                    <p> {{book.author}} {{book.age}}</p>
+                </li>
+            </ul>
+        </div>
+        <button @click.prevent="toggleShowBooks()">{{ showBooks ? 'hidebooks': 'showbooks'}}</button>
+    </div>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>

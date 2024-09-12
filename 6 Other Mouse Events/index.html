@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Learning Vue</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Hellow Vue </h1>
+
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+        </div>
+
+        <!-- <button @click.prevent="toggleShowBooks()">
+            <span v-if="showBooks" >Hide Books</span>
+            <span v-if="!showBooks">Show Books</span>
+        </button> -->
+        <!-- <button @click.prevent="toggleShowBooks()">
+            <span v-if="showBooks" >Hide Books</span>
+            <span v-else>Show Books</span>
+        </button> -->
+
+        <!-- <button @click.prevent="toggleShowBooks()">
+            {{ showBooks ? 'Hide Books' : 'Show Books'}} 
+        </button> -->
+
+        <!-- <br>
+            <div class="box" @mouseover="handleEvent()">mouseover</div>
+            <div class="box" @mouseleave="handleEvent()">mouseleave </div>
+            <div class="box" @dblclick="handleEvent()">doubleclick </div>
+            <div class="box"> default </div>
+        <br> -->
+
+        <br>
+            <div class="box" @mouseover="handleEvent($event, '5')">mouseover</div>
+            <div class="box" @mouseleave="handleEvent($event, title)">mouseleave </div>
+            <div class="box" @dblclick="handleEvent">doubleclick </div>
+            <div class="box" @mousemove="handleMousemove"> position {{x}} {{y}}</div>
+        <br>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
